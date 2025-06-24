@@ -31,6 +31,7 @@ const OnboardPage = () => {
     },
     onError: (error) => {
       toast.error(error.response?.data?.message || "Failed to onboard profile");
+      console.log(error)
     },
   })
 
@@ -41,7 +42,7 @@ const OnboardPage = () => {
   } 
 
   const generateRandomAvatar = () =>{
-    const seed = encodeURIComponent(user.fullName || user.email);
+    const seed = Math.floor(Math.random()*100000);
     const style = "avataaars";
     const random_Avatar = `https://api.dicebear.com/9.x/${style}/svg?seed=${seed}`;
     
@@ -74,7 +75,9 @@ const OnboardPage = () => {
              </div>
              {/* Generate random avatar button */}
              
-            <button  className='btn btn-accent gap-2' onClick={generateRandomAvatar}>
+            <button  className='btn btn-accent gap-2'
+             type='button'
+             onClick={generateRandomAvatar}>
                <ShuffleIcon className='size-4 mr-2'/>
                Generate Random Avatar
             </button>

@@ -39,7 +39,7 @@ const HomePage = () => {
     }
   },[outgoingFriendReqs])
   return ( 
-    <div className='p-4 sm:p-6 lg:p-8'>
+    <div className='p-4 sm:p-6 lg:p-8 '>
       <div className='container mx-auto space-y-10'>
         <div className='flex flex-col sm:flex-row justify-between items-center'>
           {/* it will contain two things Your Friend and notification button */}

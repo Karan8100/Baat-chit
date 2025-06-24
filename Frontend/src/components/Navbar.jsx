@@ -4,6 +4,7 @@ import { logout } from "../lib/api";
 import { useLocation ,Link} from "react-router";
 import { BellIcon, ShipWheelIcon ,LogOutIcon} from "lucide-react";
 import ThemeSelect from "./ThemeSelect";
+import { HomeIcon } from "lucide-react";
 
 const Navbar = () => {
     const {authUser} = useAuthUser(); //because we need authUser to show profile pic in navbar
@@ -45,6 +46,14 @@ const Navbar = () => {
                     <BellIcon className="size-5 text-base-content opacity-70" />
                   </button>
                 </Link>
+
+                <div className="lg:hidden">
+                  <Link to="/" >
+                    <button className="btn btn-ghost btn-circle">
+                      <HomeIcon className="opacity-70 size-5 text-base-content"/>
+                    </button>
+                  </Link>
+                </div>
 
                 <div className="flex items-center gap-2">
                     {/* Avatar */}

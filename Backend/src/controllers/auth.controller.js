@@ -26,7 +26,7 @@ export async function signup(req,res){
     }
      
     
-    const seed = encodeURIComponent(user.fullName || user.email);
+    const seed = Math.floor(Math.random() * 100000);
     const style = "avataaars";
     const userAvatar = `https://api.dicebear.com/9.x/${style}/svg?seed=${seed}`;
    
